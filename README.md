@@ -39,7 +39,7 @@ This project enhances a basic e-commerce layout (`ShopZ`) with rich UI interacti
 
 ---
 
-## ▶️ How to Run the Project
+## How to Run the Project
 
 1. **Download or clone** the repository.
 
