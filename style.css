@@ -1,0 +1,643 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+  background-color: #000;
+  color: white;
+}
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+body {
+  width: 100%;
+  position: relative;
+}
+a {
+  color: yellow;
+  text-decoration: none;
+}
+
+/* Navbar */
+.closeIcon {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: black;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+.logo span {
+  color: yellow;
+}
+.nav-links {
+  list-style: none;
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50vh; 
+  z-index: 99;
+  background: black;
+  color: white;
+  list-style: none;
+  padding-top: 4rem;
+}
+
+.nav-links li a {
+  color: white;
+  font-weight: 500;
+}
+
+.hamburger {
+  margin-left: 1rem;             
+  position: absolute;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  padding: 4px;
+  border: black solid 1px;
+  background: white;
+  cursor: pointer;
+}
+
+.menuItem {
+  display: block;
+  margin: 2rem 4rem;
+  font-size: 1 rem;
+  color: white;
+  text-decoration: none;
+}
+
+.showMenu {
+  transform: translateY(0);
+}
+
+/* Hero Section */
+/*.hero {
+  background: linear-gradient(to right, black, yellow); 
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+} */
+
+.hero-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; 
+  padding: 3rem 5%;
+  background: linear-gradient(to right, black, yellow); 
+  min-height: 80vh;
+  color: white;
+  position: relative; 
+}
+
+.hero-text {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text .highlight {
+  color: yellow;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero-text .price {
+  font-size: 1.2rem;
+  color: #eee;
+}
+
+.shop-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: black;
+  color: yellow;
+  border: 2px solid black;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1.5rem; 
+}
+
+
+.shop-btn:hover {
+  background-color: yellow;
+  color: black;
+  border-color: black;
+}
+
+.hero-slant {
+  width: 45%;
+  background-color: #111;
+  transform: skewX(-15deg);
+  overflow: hidden;
+  position: relative;
+  margin: -3rem 0; /* Compensate for parent padding */
+}
+
+.hero-slant img {
+  height: 100%;
+  width: auto;
+  transform: skewX(15deg) translateX(-15%); 
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 100%;
+}
+
+/* Popular Items */
+.popular {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.popular h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+}
+.card {
+  background: #222;
+  border-radius: 10px;
+  padding: 1rem;
+  min-width: 200px;
+  flex-shrink: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:  opacity 1s ease, transform 0.8s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.card:hover {
+  transform: translateY(-20px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(255, 255, 0, 0.5); 
+}
+
+.card.show-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.card p {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.card .price {
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  color: yellow;
+}
+.view-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  background-color: yellow;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.view-btn:hover {
+  background-color: #f5c600;
+}
+
+.arrow {
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: yellow;
+}
+
+/* FAQs */
+.faqs {
+  background: #111;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.faqs h2 {
+  margin-bottom: 1.5rem;
+}
+.accordion {
+  margin: 1rem auto;
+  max-width: 600px;
+  background: #222;
+  padding: 1rem;
+  border-left: 4px solid yellow;
+}
+
+.accordion__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion__answer p {
+    margin: 5px;
+    padding: 10px;
+    font-size: large;
+    color: rgb(255, 255, 255);
+    background: rgb(51, 51, 51); 
+    border-radius: 10px;
+    border: 1px solid #555;
+    transition: all 0.3s ease;
+}
+
+.toggle-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: yellow;
+  transition: transform 0.2s;
+}
+
+.accordion:hover {
+    cursor: pointer;
+}
+
+.accordion__answer {
+    display: none;
+}
+
+.accordion.active .accordion__answer {
+    display: block;
+}
+
+/* Feedback Form */
+.feedback {
+  padding: 3rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feedback h2 {
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  gap: 0.8rem;
+  background-color: #1a1a1a; 
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  color: #FFD700;
+}
+
+.form label {
+  font-weight: bold;
+  color: #FFD700;
+  text-align: left;
+}
+
+.form input,
+.form textarea {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #555; 
+  font-size: 1rem;
+  background-color: #333; 
+  color: #FFD700;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: #bbb;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border: 2px solid #FFD700;
+  background-color: #222;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #FFD700;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background-color: #e6c200;
+}
+
+/* Footer */
+.footer {
+  background: black;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+.footer a {
+  color: yellow;
+}
+
+/* Back to Top Button */
+.scrollbutton {
+  display: none; 
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: yellow;
+  color: black;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(255, 255, 0, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+.scrollbutton:hover {
+  background-color: #f5c400;
+  transform: translateY(-2px);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 5% 3rem;
+    background: linear-gradient(to right, black, yellow );
+  }
+
+  
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-slant {
+    width: 100%;
+    transform: none;
+    height: 300px;
+    margin: 0;
+    background: transparent;
+  }
+  
+  .hero-slant img {
+    transform: none;
+    width: 100%;
+    height: 100%;
+    position: static;
+    object-fit: contain;
+  }
+  
+  .shop-btn {
+    margin: 1.5rem auto 0;
+    display: block;
+    max-width: 200px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .carousel-container {
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .scrollbutton {
+    right: 150px;
+    bottom: 10px;
+  }
+}
+
+/*Toggle Theme*/
+/* DARK THEME (default) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  margin-right: 0.5rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider style */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 30px;
+  transition: 0.4s;
+  box-sizing: border-box;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #000;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* When checked */
+.switch input:checked + .slider {
+  background-color: #FFD700;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(26px);
+  background-color: #000;
+}
+
+.theme-toggle {
+  margin-right: 2rem;  
+  display: flex;
+  align-items: center;
+}
+
+
+body.dark-theme {
+  background-color: #000;
+  color: #fff;
+}
+body.dark-theme .navbar,
+body.dark-theme .form,
+body.dark-theme .card,
+body.dark-theme .faqs {
+  background-color: #111;
+  color: #FFD700;
+}
+
+/* LIGHT THEME */
+body.light-theme {
+  background-color: #fff;
+  color: #000;
+}
+body.light-theme .navbar,
+body.light-theme .form,
+body.light-theme .card,
+body.light-theme .faqs {
+  background-color: #f9f9f9;
+  color: #000;
+}
+body.light-theme .form input,
+body.light-theme .form textarea {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+body.light-theme .logo {
+  color: black;
+}
+
+/* Light Theme FAQ fixes */
+body.light-theme .accordion__question p,
+body.light-theme .accordion__answer p {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+/* Light theme footer fix */
+body.light-theme .footer {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+body.light-theme .footer a {
+  color: #000;
+}
+
+body.light-theme .price {
+  color: #444;  
+}
+
+body.light-theme .feedback h2 {
+  color: #000;
+}
+
+
+/* Initially hide and offset elements */
+.faqs, .feedback {
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Slide-in from left for FAQs */
+.faqs.slide-left {
+  transform: translateX(0);
+  opacity: 1;
+}
+.faqs:not(.slide-left) {
+  transform: translateX(-100px);
+}
+
+/* Slide-in from right for Feedback */
+.feedback.slide-right {
+  transform: translateX(0);
+  opacity: 1;
+}
+.feedback:not(.slide-right) {
+  transform: translateX(100px);
+}
+
+
+.spinner {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ccc;
+  border-top: 5px solid yellow;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 1rem auto;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopZ</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">Shop<span>Z</span></div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a class="menuItem" href="#home">Home</a></li>
+        <li><a class="menuItem" href="#popular">Popular items</a></li>
+        <li><a class="menuItem" href="#faqs">FAQs</a></li>
+        <li><a class="menuItem" href="#feedback">Feedback Form</a></li>
+
+      </ul>
+      <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <button class="hamburger">
+        <i class="menuIcon material-icons">menu</i>
+        <i class="closeIcon material-icons" style="display: none">close</i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-banner" id="home">
+    <div class="hero-text">
+        <h1><span class="highlight">New</span> Arrivals</h1>
+        <p class="price">Exclusive range just for you</p>
+        <a href="#popular" class="shop-btn">Shop Now</a>
+    </div>
+    <div class="hero-slant">
+        <img src="./assets/watch1.jpg" alt="Watch" />
+    </div>
+  </section>
+
+
+
+  <!-- Popular Items Carousel -->
+  <section class="popular" id="popular">
+    <h2>Popular Picks</h2>
+    <div class="carousel">
+    <div class="card">
+        <img src="./assets/boy1.jpg" alt="Item">
+        <p>Item 1</p>
+        <span class="price">₹1999</span>
+        <button class="view-btn">Add to Cart</button>
+    </div>
+    <div class="card">
+        <img src="./assets/watch1.jpg" alt="Item">
+        <p>Item 2</p>
+        <span class="price">₹1499</span>
+        <button class="view-btn">Add to Cart</button>
+    </div>
+    <div class="card">
+        <img src="./assets/girl1.jpg" alt="Item">
+        <p>Item 3</p>
+        <span class="price">₹2299</span>
+        <button class="view-btn">Add to Cart</button>
+    </div>
+    <div class="card">
+        <img src="./assets/boy2.jpg" alt="Item">
+        <p>Item 4</p>
+        <span class="price">₹2999</span>
+        <button class="view-btn">Add to Cart</button>
+    </div>
+    <div class="card">
+        <img src="./assets/watch2.jpg" alt="Item">
+        <p>Item 5</p>
+        <span class="price">₹899</span>
+        <button class="view-btn">Add to Cart</button>
+    </div>
+    <div class="card">
+        <img src="./assets/girl2.jpeg" alt="Item">
+        <p>Item 6</p>
+        <span class="price">₹799</span>
+        <button class="view-btn">Add to Cart</button>
+    </div>
+    <div class="card">
+        <img src="./assets/girl3.jpg" alt="Item">
+        <p>Item 7</p>
+        <span class="price">₹999</span>
+        <button class="view-btn">Add to Cart</button>
+    </div>
+    </div>
+
+  </section>
+
+  <!-- FAQs -->
+  <section class="faqs" id="faqs">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion">
+      <div class="accordion__question">
+          <p>Can I return or exchange a product?</p>
+          <span class="toggle-icon">+</span>
+      </div>
+      <div class="accordion__answer">
+          <p>Yes, returns and exchanges are accepted within 7 days of delivery.</p>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion__question">
+          <p> Do you offer Cash on Delivery (COD)?</p>
+          <span class="toggle-icon">+</span>
+      </div>
+      <div class="accordion__answer">
+          <p>Yes, COD is available on all orders across India.</p>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion__question">
+          <p>What is the delivery time?</p>
+          <span class="toggle-icon">+</span>
+      </div>
+      <div class="accordion__answer">
+          <p>Orders are usually delivered within 3–5 business days.</p>
+      </div>
+    </div>
+    
+  </section>
+
+   <!--Feedback Form -->
+    <section class="feedback" id="feedback">
+      <h2>Feedback Form</h2>
+      <form class="form">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+
+        <label for="message">Feedback</label>
+        <textarea id="message" rows="4" placeholder="Your message here..."></textarea>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="spinner" id="spinner"></div>
+      </form>
+    </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Contact us: contact@shopz.com | 📍 24, Mall Road, Chennai, India</p>
+    <p>Follow us:
+      <a href="#">Instagram</a> |
+      <a href="#">Facebook</a> |
+      <a href="#">Twitter</a>
+    </p>
+    <p>&copy; 2025 ShopZ. All rights reserved.</p>
+  </footer>
+
+  <a href="#" class="scrollbutton" id="scrollbuttonid">
+        Back to Top
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="script.js"></script>
+  <script>
+    // Carousel Control
+    const carousel = document.querySelector('.carousel');
+    document.querySelector('.arrow.left').addEventListener('click', () => {
+      carousel.scrollBy({ left: -220, behavior: 'smooth' });
+    });
+    document.querySelector('.arrow.right').addEventListener('click', () => {
+      carousel.scrollBy({ left: 220, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
